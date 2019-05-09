@@ -23,4 +23,4 @@ sudo systemctl enable crond
 sudo systemctl start crond
 sudo cd /home/atadmin
 sudo rm -rf /tmp/serverconfig
-shutdown -r now
+#shutdown -r now
