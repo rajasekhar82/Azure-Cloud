@@ -3,7 +3,7 @@
 
 sudo mkdir /tmp/serverconfig
 sudo mount -t nfs -o,rw 10.0.0.7:/home/atadmin/server-configuration/UAT /tmp/serverconfig
-sudo cp -var /tmp/serverconfig/UAT/etc/* /etc/
+sudo cp -var /tmp/serverconfig/etc/* /etc/
 sudo chmod -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini
 sudo mount -t nfs -o,rw 10.0.0.7:/opt/nomadx /opt/nomadx
 sudo chown -R atadmin:atadmin /var/lib/php/*
@@ -22,5 +22,4 @@ sudo systemctl restart rsyslog
 sudo systemctl enable crond
 sudo systemctl start crond
 sudo cd /home/atadmin
-sudo rm -rf /tmp/serverconfig
-#shutdown -r now
+sudo umount -l /tmp/serverconfig
