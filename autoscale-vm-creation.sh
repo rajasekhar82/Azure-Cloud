@@ -23,3 +23,7 @@ sudo systemctl enable crond
 sudo systemctl start crond
 sudo cd /home/atadmin
 sudo umount -l /tmp/serverconfig
+chmod -R root:root /etc/postfix
+sorry
+chown -R root:root /etc/postfix
+chmod 600 /etc/postfix/sasl*
