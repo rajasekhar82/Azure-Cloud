@@ -7,7 +7,6 @@ sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/PROD /tmp/s
 sudo cp -var /tmp/serverconfig/etc/* /etc/
 sudo chown -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini /etc/postfix
 sudo mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx
-sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx" >>/etc/rc.local
 sudo chown -R atadmin:atadmin /var/lib/php/*
 sudo systemctl disable httpd
 sudo systemctl stop httpd
@@ -27,10 +26,14 @@ sudo systemctl enable crond
 sudo systemctl start crond
 sudo cd /home/atadmin
 sudo umount -l /tmp/serverconfig
+sudo rm -rf /tmp/serverconfig
 sudo chown -R root:root /etc/postfix
 sudo chmod 600 /etc/postfix/sasl*
 sudo systemctl disable newrelic-infra.service
 sudo systemctl stop newrelic-infra.service
+sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx" >>/etc/rc.local
+sudo umount -l /opt/nomadx
 sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
 sudo systemctl start rc-local
+ 
