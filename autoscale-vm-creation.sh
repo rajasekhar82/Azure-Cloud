@@ -28,3 +28,5 @@ sudo cd /home/atadmin
 sudo umount -l /tmp/serverconfig
 sudo chown -R root:root /etc/postfix
 sudo chmod 600 /etc/postfix/sasl*
+sudo systemctl disable newrelic-infra.service
+sudo systemctl stop newrelic-infra.service
