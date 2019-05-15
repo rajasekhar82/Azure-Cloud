@@ -1,6 +1,7 @@
 #!/bin/bash
 # CentOS 7.4
 sudo mkdir /tmp/serverconfig
+sudo echo "127.0.0.1      nomadxprod.aceturtle.in" >>/etc/hosts
 sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/UAT /tmp/serverconfig
 sudo cp -var /tmp/serverconfig/etc/* /etc/
 sudo chmod -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini
