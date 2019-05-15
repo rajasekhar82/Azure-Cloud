@@ -7,6 +7,7 @@ sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/PROD /tmp/s
 sudo cp -var /tmp/serverconfig/etc/* /etc/
 sudo chmod -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini
 sudo mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx
+sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx" >>/etc/rc.local
 sudo chown -R atadmin:atadmin /var/lib/php/*
 sudo systemctl disable httpd
 sudo systemctl stop httpd
