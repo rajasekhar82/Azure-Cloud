@@ -1,5 +1,6 @@
 #!/bin/bash
 # CentOS 7.4
+ssudo sed "17i Port 2266" /etc/ssh/sshd_config
 sudo mkdir /tmp/serverconfig
 sudo echo "127.0.0.1      nomadxprod.aceturtle.in" >>/etc/hosts
 sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/PROD /tmp/serverconfig
