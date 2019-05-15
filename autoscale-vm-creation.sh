@@ -30,3 +30,6 @@ sudo chown -R root:root /etc/postfix
 sudo chmod 600 /etc/postfix/sasl*
 sudo systemctl disable newrelic-infra.service
 sudo systemctl stop newrelic-infra.service
+sudo chmod +x /etc/rc.d/rc.local
+sudo systemctl enable rc-local
+sudo systemctl start rc-local
