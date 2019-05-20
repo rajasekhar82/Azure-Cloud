@@ -38,5 +38,5 @@ sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx" >>/etc
 sudo umount -l /opt/nomadx
 sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
-sudo systemctl start rc-local
+sudo systemctl restart rc-local
  
