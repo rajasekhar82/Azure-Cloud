@@ -39,4 +39,4 @@ sudo umount -l /opt/nomadx
 sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
 sudo systemctl restart rc-local
- 
+sudo shutdown -r now
