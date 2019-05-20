@@ -29,6 +29,9 @@ sudo umount -l /tmp/serverconfig
 sudo rm -rf /tmp/serverconfig
 sudo chown -R root:root /etc/postfix
 sudo chmod 600 /etc/postfix/sasl*
+sudo chown -R atadmin:nginx /var/log/nginx
+sudo chmod -R 2754 /var/log/nginx
+sudo usermod -a -G atadmin nginx
 sudo systemctl disable newrelic-infra.service
 sudo systemctl stop newrelic-infra.service
 sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx" >>/etc/rc.local
