@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # CentOS 7.6
 sudo sed -i "17i Port 2266" /etc/ssh/sshd_config
