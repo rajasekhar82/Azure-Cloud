@@ -4,10 +4,12 @@ sudo yum install mod_ssl -y
 sudo rm -rf /etc/httpd/conf.d/ssl.conf
 sudo sed -i "17i Port 2266" /etc/ssh/sshd_config
 sudo mkdir /tmp/serverconfig
-sudo echo "127.0.0.1      pumaautoscale.aceturtle.in" >>/etc/hosts
+sudo umount /tmp/serverconfig
+sudo umount /var/www/v2/gpuma
+sudo echo "127.0.0.1      in.puma.com" >>/etc/hosts
 sudo mount -t nfs -o,rw 10.0.0.7:/home/atadmin/server-configuration/PROD /tmp/serverconfig
 sudo cp -var /tmp/serverconfig/etc/* /etc/
-sudo chown -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini /etc/postfix
+sudo chown -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini /etc/postfix /etc/httpd
 sudo mount -t nfs -o,rw 10.0.0.7:/opt/puma /var/www/v2/gpuma
 sudo chown -R atadmin:atadmin /var/lib/php/*
 sudo systemctl enable httpd
