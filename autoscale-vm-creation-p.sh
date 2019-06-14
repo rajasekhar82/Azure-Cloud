@@ -1,6 +1,7 @@
 #!/bin/bash
 # CentOS 7.6
 sudo yum install mod_ssl -y
+sudo yum update kernel -y
 sudo rm -rf /etc/httpd/conf.d/ssl.conf
 sudo sed -i "17i Port 22" /etc/ssh/sshd_config
 sudo sed -i "21i Port 2266" /etc/ssh/sshd_config
