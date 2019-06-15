@@ -43,6 +43,7 @@ sudo usermod -a -G atadmin nginx
 sudo systemctl disable newrelic-infra.service
 sudo systemctl stop newrelic-infra.service
 sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.7:/opt/puma  /var/www/v2/gpuma" >>/etc/rc.local
+sudo echo "/usr/bin/mount -t nfs -o,rw 10.0.0.7:/opt/puma/var  /var/www/v2/gpuma/var" >>/etc/rc.local
 sudo umount -l /var/www/v2/gpuma
 sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
