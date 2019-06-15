@@ -48,4 +48,5 @@ sudo umount -l /var/www/v2/gpuma
 sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
 sudo systemctl restart rc-local
+sudo echo "atadmin ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/waagent
 sudo shutdown -r now
