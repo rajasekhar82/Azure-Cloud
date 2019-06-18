@@ -3,7 +3,7 @@
 sudo sed -i "17i Port 2266" /etc/ssh/sshd_config
 sudo mkdir /tmp/serverconfig
 sudo echo "127.0.0.1      nomadx.sg" >>/etc/hosts
-sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/PROD /tmp/serverconfig
+sudo mount -t nfs -o,rw 10.0.0.11:/home/atadmin/server-configuration/magento/nomadx/PROD  /tmp/serverconfig
 sudo cp -var /tmp/serverconfig/etc/* /etc/
 sudo chown -R root:root /etc/nginx /etc/php-fpm.d /etc/php.ini /etc/postfix
 sudo mount -t nfs -o,rw 10.0.0.11:/opt/nomadx /opt/nomadx
