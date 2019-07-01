@@ -40,3 +40,7 @@ sudo chmod +x /etc/rc.d/rc.local
 sudo systemctl enable rc-local
 sudo systemctl restart rc-local
 sudo shutdown -r now
+##Nginx Amplify Agent
+sudo curl -L -O https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
+sudo API_KEY='437c63189b7617ed2ae39724805bfd4b' sh ./install.sh
+sudo systemctl restart nginx
